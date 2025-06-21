@@ -8,7 +8,7 @@ begin:
   stage: begin
   when: manual
   variables:
-    COMPOSE_ENV_FILES: $ENV_FILE
+    COMPOSE_ENV_FILES: $COMPOSE_ENV_FILES
   # before_script:
   #   - echo $ENV_FILE > .env
   script:
