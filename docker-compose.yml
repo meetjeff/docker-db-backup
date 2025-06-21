@@ -3,9 +3,9 @@ services:
     image: tiredofit/db-backup:latest
     container_name: db-backup
     restart: unless-stopped
-    # volumes:
-    #   - ${HOST_BACKUP_PATH}:${CONTAINER_BACKUP_PATH}
-    #   - ${HOST_LOG_PATH}:${CONTAINER_LOG_PATH}
+    volumes:
+      - ${HOST_BACKUP_PATH}:${CONTAINER_BACKUP_PATH}
+      - ${HOST_LOG_PATH}:${CONTAINER_LOG_PATH}
     environment:
       # ─── Basic ──────────────────────────────────────────────────
       TZ: ${TZ}
@@ -13,12 +13,11 @@ services:
       CONTAINER_ENABLE_MONITORING: ${CONTAINER_ENABLE_MONITORING}
 
       # ─── Notification ───────────────────────────────────────────
-      # ENABLE_NOTIFICATIONS: ${ENABLE_NOTIFICATIONS}
-      # NOTIFICATION_TYPE: ${NOTIFICATION_TYPE}
-      # SMTP_HOST: ${SMTP_HOST}
-      # SMTP_PORT: ${SMTP_PORT}
-      # MAIL_FROM: ${MAIL_FROM}
-      # MAIL_TO: ${MAIL_TO}
+      ENABLE_NOTIFICATIONS: ${ENABLE_NOTIFICATIONS}
+      NOTIFICATION_TYPE: ${NOTIFICATION_TYPE}
+      SMTP_HOST: ${SMTP_HOST}
+      MAIL_FROM: ${MAIL_FROM}
+      MAIL_TO: ${MAIL_TO}
 
       # ─── Global Default ─────────────────────────────────────────
       DEFAULT_BACKUP_LOCATION: ${DEFAULT_BACKUP_LOCATION}
