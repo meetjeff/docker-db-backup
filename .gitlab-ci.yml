@@ -1,0 +1,22 @@
+stages:
+  - begin
+  - stop
+
+begin:
+  tags:
+    - docker-socket-binding
+  stage: begin
+  when: manual
+  before_script:
+    - echo $ENV_FILE > .env
+  script:
+    # - docker-compose up -d
+    - docker-compose config --environment
+
+stop:
+  tags:
+    - docker-socket-binding
+  stage: stop
+  when: manual
+  script:
+    - docker-compose down
