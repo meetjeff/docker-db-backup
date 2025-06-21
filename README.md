@@ -60,3 +60,20 @@ restore <filename> <db_type> <db_hostname> <db_name> <db_user> <db_pass> <db_por
 # Example
 restore backup_20231201_093000.sql.zst pgsql localhost mydb postgres mypass 5432
 ```
+
+## CI Settings
+
+### GitLab CI/CD Configuration
+
+To set up automated deployment with GitLab CI/CD:
+
+1. **Configure Environment Variables**:
+   - Set up a GitLab CI/CD variable named `COMPOSE_ENV_FILES`
+   - Set the variable type to `file`
+   - Add your environment file content as the value
+
+2. **How it works**:
+   - GitLab CI automatically saves the variable value to a temporary file
+   - The `COMPOSE_ENV_FILES` environment variable is set to the file path (e.g., `/builds/rd/docker-db-backup.tmp/COMPOSE_ENV_FILES`)
+   - Docker Compose automatically reads the environment variables from this file path
+   - No additional configuration is needed in the CI YAML file

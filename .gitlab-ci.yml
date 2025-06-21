@@ -7,15 +7,8 @@ begin:
     - docker-socket-binding
   stage: begin
   when: manual
-  # variables:
-  #   COMPOSE_ENV_FILES: $COMPOSE_ENV_FILES
-  before_script:
-    - echo $COMPOSE_ENV_FILES
-    - echo $ENV_FILE
-  #   - echo $ENV_FILE > .env
   script:
-    # - docker-compose up -d
-    - docker-compose config --environment
+    - docker-compose up -d
 
 stop:
   tags:
