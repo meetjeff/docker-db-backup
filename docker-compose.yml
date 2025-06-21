@@ -28,6 +28,7 @@ services:
       DEFAULT_CLEANUP_TIME: ${DEFAULT_CLEANUP_TIME}
       DEFAULT_LOG_LEVEL: ${DEFAULT_LOG_LEVEL}
       DEFAULT_BACKUP_GLOBALS: ${DEFAULT_BACKUP_GLOBALS}
+      DEFAULT_SIZE_VALUE: ${DEFAULT_SIZE_VALUE}
 
       # ─── DB01 ────────────────────────────────────────────────────
       DB01_FILESYSTEM_PATH: ${DB01_FILESYSTEM_PATH}
@@ -39,4 +40,14 @@ services:
       DB01_NAME: ${DB01_NAME}
       DB01_SPLIT_DB: ${DB01_SPLIT_DB}
       DB01_BACKUP_BEGIN: ${DB01_BACKUP_BEGIN}
-      DB01_SIZE_VALUE: ${DB01_SIZE_VALUE}
+
+      # ─── DB02 ────────────────────────────────────────────────────
+      DB02_FILESYSTEM_PATH: ${DB02_FILESYSTEM_PATH}
+      DB02_TYPE: ${DB02_TYPE}
+      DB02_HOST: ${DB02_HOST}
+      DB02_PORT: ${DB02_PORT}
+      DB02_USER: ${DB02_USER}
+      DB02_PASS: ${DB02_PASS}
+      DB02_NAME: ${DB02_NAME}
+      DB02_SPLIT_DB: ${DB02_SPLIT_DB}
+      DB02_BACKUP_BEGIN: ${DB02_BACKUP_BEGIN}
