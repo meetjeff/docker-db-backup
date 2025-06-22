@@ -34,7 +34,7 @@ services:
       DEFAULT_FILESYSTEM_PATH: ${DEFAULT_FILESYSTEM_PATH}
 
       # ─── DB01 ────────────────────────────────────────────────────
-      # DB01_FILESYSTEM_PATH: ${DB01_FILESYSTEM_PATH}
+      DB01_FILESYSTEM_PATH: ${DB01_FILESYSTEM_PATH}
       DB01_TYPE: ${DB01_TYPE}
       DB01_HOST: ${DB01_HOST}
       DB01_PORT: ${DB01_PORT}
@@ -43,7 +43,6 @@ services:
       DB01_NAME: ${DB01_NAME}
       DB01_SPLIT_DB: ${DB01_SPLIT_DB}
       DB01_BACKUP_BEGIN: ${DB01_BACKUP_BEGIN}
-      DB01_CLEANUP_TIME: ${DB01_CLEANUP_TIME}
 
       # ─── DB02 ────────────────────────────────────────────────────
       DB02_FILESYSTEM_PATH: ${DB02_FILESYSTEM_PATH}
