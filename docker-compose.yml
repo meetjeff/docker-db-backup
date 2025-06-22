@@ -4,15 +4,16 @@ services:
     container_name: db-backup
     restart: unless-stopped
     volumes:
-      - ${HOST_BACKUP_PATH}:${CONTAINER_BACKUP_PATH}
-      - ${HOST_LOG_PATH}:${CONTAINER_LOG_PATH}
-      - ${HOST_TEMP_PATH}:${CONTAINER_TEMP_PATH}
+      - ${HOST_BACKUP_PATH}:${CONTAINER_BACKUP_PATH:/backup}
+      - ${HOST_LOG_PATH}:${CONTAINER_LOG_PATH:/logs}
+      - ${HOST_TEMP_PATH}:${CONTAINER_TEMP_PATH:/tmp/backups}
     environment:
       # ─── Basic ──────────────────────────────────────────────────
       TZ: ${TZ}
       TIMEZONE: ${TIMEZONE}
-      CONTAINER_ENABLE_MONITORING: ${CONTAINER_ENABLE_MONITORING}
-      BACKUP_JOB_CONCURRENCY: ${BACKUP_JOB_CONCURRENCY}
+      CONTAINER_ENABLE_MONITORING: ${CONTAINER_ENABLE_MONITORING:FALSE}
+      BACKUP_JOB_CONCURRENCY: ${BACKUP_JOB_CONCURRENCY:1}
+      DEBUG_MODE: ${DEBUG_MODE:FALSE}
 
       # ─── Notification ───────────────────────────────────────────
       ENABLE_NOTIFICATIONS: ${ENABLE_NOTIFICATIONS}
@@ -21,6 +22,7 @@ services:
       SMTP_PORT: ${SMTP_PORT}
       MAIL_FROM: ${MAIL_FROM}
       MAIL_TO: ${MAIL_TO}
+      DEBUG_NOTIFY: ${DEBUG_NOTIFY:FALSE}
 
       # ─── Global Default ─────────────────────────────────────────
       DEFAULT_BACKUP_LOCATION: ${DEFAULT_BACKUP_LOCATION}
