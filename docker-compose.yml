@@ -6,6 +6,7 @@ services:
     volumes:
       - ${HOST_BACKUP_PATH}:${CONTAINER_BACKUP_PATH}
       - ${HOST_LOG_PATH}:${CONTAINER_LOG_PATH}
+      - ${HOST_TEMP_PATH}:${CONTAINER_TEMP_PATH}
     environment:
       # ─── Basic ──────────────────────────────────────────────────
       TZ: ${TZ}
