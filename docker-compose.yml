@@ -17,6 +17,7 @@ services:
       ENABLE_NOTIFICATIONS: ${ENABLE_NOTIFICATIONS}
       NOTIFICATION_TYPE: ${NOTIFICATION_TYPE}
       SMTP_HOST: ${SMTP_HOST}
+      SMTP_PORT: ${SMTP_PORT}
       MAIL_FROM: ${MAIL_FROM}
       MAIL_TO: ${MAIL_TO}
 
@@ -41,6 +42,7 @@ services:
       DB01_NAME: ${DB01_NAME}
       DB01_SPLIT_DB: ${DB01_SPLIT_DB}
       DB01_BACKUP_BEGIN: ${DB01_BACKUP_BEGIN}
+      DB01_CLEANUP_TIME: ${DB01_CLEANUP_TIME}
 
       # ─── DB02 ────────────────────────────────────────────────────
       DB02_FILESYSTEM_PATH: ${DB02_FILESYSTEM_PATH}

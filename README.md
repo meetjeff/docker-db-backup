@@ -12,6 +12,12 @@ A Docker-based DB backup solution using [tiredofit/db-backup](https://github.com
 
 `CLEANUP_TIME` removes backup files older than specified minutes from the same path.
 
+If there are errors during the backup job, the cleanup process will be skipped:
+
+```
+Skipping Cleaning up old backups because there were errors in backing up
+```
+
 > **⚠️ Important**: When a database is removed from the server, its old backup files will also be deleted during cleanup. To preserve backups:
 > - Manually move old backups to a different path before database removal
 > - Configure separate backup paths for each database
