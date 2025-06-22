@@ -70,6 +70,14 @@ restore <filename> <db_type> <db_hostname> <db_name> <db_user> <db_pass> <db_por
 restore backup_20231201_093000.sql.zst pgsql localhost mydb postgres mypass 5432
 ```
 
+## Logging Considerations
+
+### Cross-Day Backup Jobs
+
+Logs are written to date-specific folders based on the execution date. If a backup job starts on one day and completes on another (spanning midnight), the system may not find the original log file path upon completion.
+
+**Recommendation**: Schedule backup jobs to start and complete within the same day to ensure proper log file tracking.
+
 ## CI Settings
 
 ### GitLab CI/CD Configuration
