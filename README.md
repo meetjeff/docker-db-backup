@@ -1,4 +1,4 @@
-# PostgreSQL Database Backup Service
+# Database Backup Service
 
 A Docker-based DB backup solution using [tiredofit/db-backup](https://github.com/tiredofit/docker-db-backup).
 
