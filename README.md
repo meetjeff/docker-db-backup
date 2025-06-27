@@ -67,7 +67,10 @@ docker exec -it <container-name> bash
 restore <filename> <db_type> <db_hostname> <db_name> <db_user> <db_pass> <db_port>
 
 # Example
-restore backup_20231201_093000.sql.zst pgsql localhost mydb postgres mypass 5432
+restore backup_20250601_093000.sql.zst pgsql localhost mydb postgres mypass 5432
+
+# Run restore in background and log output
+nohup restore /backup/db1/backup_20250601_093000.sql.zst pgsql localhost mydb postgres mypass 5432 >/backup/logs/restore/mydb-20250601.txt 2>&1 &
 ```
 
 ## Logging Considerations
